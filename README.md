@@ -1,0 +1,2 @@
+# rabbitmq-publisher
+rabbitmq-publisher
