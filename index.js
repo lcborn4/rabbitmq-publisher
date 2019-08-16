@@ -2,7 +2,7 @@
 
 var amqp = require("amqplib/callback_api");
 
-let MSG_INTERVAL = process.env.INTERVAL ? process.env.INTERVAL : 10000
+let MSG_INTERVAL = process.env.MESSAGE_INTERVAL ? process.env.MESSAGE_INTERVAL : 10000
 
 let URL = process.env.CLOUDAMQP_URL ? process.env.CLOUDAMQP_URL : "amqp://localhost"
 
