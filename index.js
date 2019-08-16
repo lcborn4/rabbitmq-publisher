@@ -4,9 +4,9 @@ var amqp = require("amqplib/callback_api");
 
 let MSG_INTERVAL = process.env.INTERVAL ? process.env.INTERVAL : 10000
 
-let URL = process.env.RABBITMQ_URL ? process.env.RABBITMQ_URL : "amqp://localhost"
+let URL = process.env.CLOUDAMQP_URL ? process.env.CLOUDAMQP_URL : "amqp://localhost"
 
-amqp.connect("amqp://localhost", function(error0, connection) {
+amqp.connect(URL, function(error0, connection) {
   if (error0) {
     throw error0;
   }
