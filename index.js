@@ -1,6 +1,9 @@
 #!/usr/bin/env node
 
 var amqp = require("amqplib/callback_api");
+const express = require('express')
+const app = express()
+
 const port = process.env.PORT || 8000;
 let MSG_INTERVAL = process.env.MESSAGE_INTERVAL ? process.env.MESSAGE_INTERVAL : 10000
 
@@ -29,3 +32,7 @@ amqp.connect(URL, function(error0, connection) {
     }, MSG_INTERVAL);
   });
 });
+
+app.get('/', (req, res) => res.send('Hello World!'))
+
+app.listen(port, () => console.log(`Example app listening on port ${port}!`))
