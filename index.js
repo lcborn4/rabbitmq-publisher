@@ -30,8 +30,8 @@ amqp.connect(URL, function(error0, connection) {
     });
 
     const intervalObj = setInterval(() => {
-      //channel.publish(exchange, key, Buffer.from(msg));
-      channel.publish(exchange, key, msg);
+      console.log("Sending message", msg);
+      channel.publish(exchange, key, Buffer.from(msg));
       console.log(" [x] Sent %s:'%s'", key, msg);
     }, MSG_INTERVAL);
   });
