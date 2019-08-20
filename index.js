@@ -5,9 +5,12 @@ const express = require('express')
 const app = express()
 
 const port = process.env.PORT || 8000;
+
 let MSG_INTERVAL = process.env.MESSAGE_INTERVAL ? process.env.MESSAGE_INTERVAL : 10000
 
 let URL = process.env.CLOUDAMQP_URL ? process.env.CLOUDAMQP_URL : "amqp://localhost"
+
+const message = require('./message');
 
 amqp.connect(URL, function(error0, connection) {
   if (error0) {
@@ -33,6 +36,6 @@ amqp.connect(URL, function(error0, connection) {
   });
 });
 
-app.get('/', (req, res) => res.send('Hello World!'))
+app.get('/', (req, res) => res.send(message))
 
 app.listen(port, () => console.log(`Example app listening on port ${port}!`))
