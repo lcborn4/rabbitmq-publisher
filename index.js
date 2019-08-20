@@ -23,7 +23,7 @@ amqp.connect(URL, function(error0, connection) {
     var exchange = "topic_logs";
     var args = process.argv.slice(2);
     var key = args.length > 0 ? args[0] : "test_rabbit";
-    var msg = args.slice(1).join(" ") || "Hello World!";
+    var msg = message;
 
     channel.assertExchange(exchange, "topic", {
       durable: false
