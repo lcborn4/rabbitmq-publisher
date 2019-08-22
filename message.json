@@ -9,6 +9,7 @@
     "shiftStatusTypeCode": "ONDUTY",
     "resourceTypeCode": "PATROL2",
     "deviceId": "b57b6a64-9709-4475-871b-30816201d8a5",
+    "accuracy": 0.45,
     "latitude": 33.217716666666668,
     "longitude": -96.69753333333334,
     "altitude": 0,
